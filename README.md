@@ -18,20 +18,11 @@ A hybrid firewall combining Reinforcement Learning and AI-based real-time classi
 - `attacker_agent.py` → Simulated attacker script
 
 ## 📦 Setup
-```bash
 pip install -r requirements.txt
 sudo python3 rl_agent/rl_firewall.py
 
-🧠 Authors
-
+##🧠 Authors
 S Arjuna Sharma
 Shreyas MV
 
-
-Then commit & push:
-
-```bash
-git add README.md
-git commit -m "📝 Added README"
-git push
 
