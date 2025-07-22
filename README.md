@@ -47,6 +47,7 @@ ai-firewall-rl/
 ├── main.py                    # CLI launcher for all attacks
 └── README.md
 
+---
 
 ## ⚙️ Setup Instructions
 
