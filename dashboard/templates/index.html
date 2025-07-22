@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RL Firewall Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%; border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #999; padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #333; color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .block { color: red; font-weight: bold; }
+        .allow { color: green; font-weight: bold; }
+        .port_scan { background-color: #ffcccb; font-weight: bold; }
+        .dns_query { background-color: #e6f7ff; }
+        .icmp_ping { background-color: #fff5cc; }
+        .suspicious_tcp { background-color: #ffe0b3; }
+        .normal { background-color: #f9f9f9; }
+    </style>
+</head>
+<body>
+    <h2>🔥 RL Firewall Live Log (Last 50 Packets)</h2>
+    <table>
+        <tr>
+            <th>Time</th><th>Source</th><th>Dest</th>
+            <th>Reason</th><th>IP Type</th><th>Protocol</th><th>Port Type</th>
+            <th>Action</th><th>Reward</th>
+        </tr>
+        {% for log in logs %}
+        <tr class="{{ log.reason }}">
+            <td>{{ log.timestamp }}</td>
+            <td>{{ log.src }}</td>
+            <td>{{ log.dst }}</td>
+            <td>{{ log.reason }}</td>
+            <td>{{ log.ip_type }}</td>
+            <td>{{ log.protocol }}</td>
+            <td>{{ log.port_type }}</td>
+            <td class="{{ log.action }}">{{ log.action|upper }}</td>
+            <td>{{ log.reward }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
