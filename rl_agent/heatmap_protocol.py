@@ -27,7 +27,7 @@ df["preference"] = df["q_block"] - df["q_allow"]
 # Pivot on reason vs protocol
 pivot = df.pivot_table(index="reason", columns="protocol", values="preference", aggfunc="mean")
 sns.heatmap(pivot, annot=True, cmap="coolwarm", center=0)
-plt.title("🔥 RL Agent Preference (Reason vs Protocol)")
+plt.title("RL Agent Preference (Reason vs Protocol)")
 plt.ylabel("Traffic Reason")
 plt.xlabel("Protocol")
 plt.tight_layout()
