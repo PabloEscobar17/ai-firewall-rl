@@ -29,10 +29,10 @@ DECAY_RATE = 0.995
 if os.path.exists(Q_TABLE_FILE):
     with open(Q_TABLE_FILE, "rb") as f:
         q_table = pickle.load(f)
-    print("[📂] Q-table loaded from file.")
+    print("[+] Q-table loaded from file.")
 else:
     q_table = {}
-    print("[🆕] New Q-table initialized.")
+    print("[+] New Q-table initialized.")
 
 # === Port Scan Tracker ===
 scan_tracker = {}
@@ -45,10 +45,10 @@ def ban_ip(ip):
     if ip not in banned_ips:
         try:
             subprocess.run(["iptables", "-A", "INPUT", "-s", ip, "-j", "DROP"], check=True)
-            print(f"[🔥] IP {ip} has been blocked via iptables.")
+            print(f"[+] IP {ip} has been blocked via iptables.")
             banned_ips.add(ip)
         except subprocess.CalledProcessError as e:
-            print(f"[⚠️] Failed to ban IP {ip}: {e}")
+            print(f"[+] Failed to ban IP {ip}: {e}")
 
 # === Classify packet reason ===
 def classify_reason(packet):
@@ -184,10 +184,10 @@ def handle_packet(packet):
     print(f"[RL+AI] {action.upper()} | State: {state} | AI: {ai_label} | Reward: {reward} | Epsilon: {EPSILON:.4f}")
 
 # === Start ===
-print("[🤖] RL + AI Firewall is running... Press Ctrl+C to stop.")
+print("[+] RL + AI Firewall is running... Press Ctrl+C to stop.")
 try:
     sniff(prn=handle_packet, store=0)
 except KeyboardInterrupt:
     with open(Q_TABLE_FILE, "wb") as f:
         pickle.dump(q_table, f)
-    print("\n[✔️] Q-table saved. Exiting.")
+    print("\n[+] Q-table saved. Exiting.")
