@@ -26,7 +26,7 @@ df["preference"] = df["q_block"] - df["q_allow"]
 # Pivot on port_type vs ip_type
 pivot = df.pivot_table(index="port_type", columns="ip_type", values="preference", aggfunc="mean")
 sns.heatmap(pivot, annot=True, cmap="coolwarm", center=0)
-plt.title("🛡️ RL Preference (Port Type vs IP Type)")
+plt.title("RL Preference (Port Type vs IP Type)")
 plt.ylabel("Port Category")
 plt.xlabel("IP Reputation")
 plt.tight_layout()
