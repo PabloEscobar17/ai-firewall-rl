@@ -1,4 +1,4 @@
-# 🔥 AI-Driven Adaptive Firewall Using Reinforcement Learning and Real-Time Threat Classification
+# AI-Driven Adaptive Firewall Using Reinforcement Learning and Real-Time Threat Classification
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
@@ -8,7 +8,7 @@ Developed by **S Arjuna Sharma** and **Shreyas MV**
 
 ---
 
-## 🚀 Key Features
+## Key Features
 
 - ✅ Detects and defends against 8+ common network attacks  
 - ✅ Combines Reinforcement Learning (Q-Learning) with a lightweight AI classifier  
