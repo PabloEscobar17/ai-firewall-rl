@@ -82,5 +82,5 @@ def packet_callback(packet):
         return
 
 # === Start Sniffing ===
-print("[🔥] AI-Powered Firewall Engine running... Press Ctrl+C to stop.")
+print("[+] AI-Powered Firewall Engine running... Press Ctrl+C to stop.")
 sniff(prn=packet_callback, store=0)
