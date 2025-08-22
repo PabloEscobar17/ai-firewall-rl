@@ -32,7 +32,7 @@ def benign_ping():
 
 ATTACKS = [icmp_flood, syn_flood, udp_flood, dns_spam, benign_ping]
 
-print("[🔥] Attacker Agent Started...")
+print("[+] Attacker Agent Started...")
 try:
     while True:
         attack = random.choice(ATTACKS)
