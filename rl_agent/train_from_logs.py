@@ -41,4 +41,4 @@ for _, row in df.iterrows():
 with open(Q_TABLE_PATH, "wb") as f:
     pickle.dump(q_table, f)
 
-print("✅ Q-table trained from historical logs and saved.")
+print("Q-table trained from historical logs and saved.")
