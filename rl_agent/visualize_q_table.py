@@ -36,7 +36,7 @@ pivot = df.pivot_table(index="reason", columns="ip_type", values="preference", a
 # Plot
 plt.figure(figsize=(8, 6))
 sns.heatmap(pivot, annot=True, cmap="coolwarm", center=0)
-plt.title("🔥 RL Agent's Block vs Allow Preference")
+plt.title("RL Agent's Block vs Allow Preference")
 plt.ylabel("Traffic Reason")
 plt.xlabel("Source IP Type")
 plt.tight_layout()
